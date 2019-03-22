@@ -14,3 +14,21 @@ getRandomNumberList = (arr, count) => {
   }
   return target;
 };
+
+// 深拷贝数组
+
+copyArray = (obj) => {
+  if (typeof obj !== 'object') {return;}
+  const newObj = obj instanceof Array ? [] : {};
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      console.log(obj[key]);
+      newObj[key] = typeof obj[key] === 'object' ? copyArray(obj[key]) : obj[key];
+      console.log(newObj[key]);
+    }
+  }
+  return newObj;
+};
+
+removeAttrRepeat = (arr, attr) => {
+};
